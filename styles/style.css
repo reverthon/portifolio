@@ -36,13 +36,49 @@ body {
     justify-content: flex-start;
 }
 
+
+
+
+.cabecalho__menu {
+    position: relative; /* Necessário para posicionar a borda */
+}
+
 .cabecalho__menu__link {
     font-family: var(--fonte-secundaria);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
+    position: relative; /* Necessário para posicionar a borda */
+    padding-bottom: 5px; /* Adiciona um espaço na parte inferior para a borda */
+    transition: color 0.3s ease; /* Transição suave para a cor */
 }
+
+.cabecalho__menu__link:hover,
+.cabecalho__menu__link.active {
+    color: var(--cor-secundaria);
+}
+
+.cabecalho__menu__link:hover::after,
+.cabecalho__menu__link.active::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Posiciona a borda à esquerda */
+    right: 0; /* Faz a borda ocupar toda a largura */
+    bottom: 0; /* Posiciona a borda na parte inferior */
+    height: 3px; /* Altura da borda */
+    background-color: var(--cor-secundaria); /* Cor da borda */
+}
+
+.cabecalho__menu__link.active {
+    font-weight: 700; /* Para destacar ainda mais o link ativo */
+}
+
+.cabecalho__menu__link.active::after {
+    background-color: var(--cor-secundaria); /* A cor da borda ativa */
+}
+
+
 
 .apresentacao {
     padding: 5% 15%; /* Reduz o padding superior */

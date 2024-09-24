@@ -20,51 +20,49 @@ body {
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
-    min-height: 100vh;
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da tela */
     display: flex;
     flex-direction: column;
-    width: 100%; /* Adicionado para evitar zoom */
 }
 
+
 .cabecalho {
-    padding: 2% 5%; /* Ajustado para 5% */
+    padding: 2% 0 0 15%;
 }
 
 .cabecalho__menu {
     display: flex;
-    gap: 2rem; /* Ajustado para 2rem */
-    justify-content: center; /* Centraliza no celular */
-    flex-wrap: wrap; /* Permite que o menu quebre a linha */
+    gap: 5rem; /* 80px assuming 1rem = 16px */
+    justify-content: flex-start;
 }
 
 .cabecalho__menu__link {
     font-family: var(--fonte-secundaria);
-    font-size: 1.2rem; /* Ajustado para melhor visualização no celular */
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
 }
 
 .apresentacao {
-    padding: 5% 10%; /* Ajustado para 10% */
+    padding: 5% 15%; /* Reduz o padding superior */
     display: flex;
-    flex-direction: row; /* Alinha os itens lado a lado */
-    align-items: flex-start; /* Alinha no topo */
-    justify-content: space-between; /* Espaçamento entre os itens */
-    gap: 2.5rem; /* Ajustado para melhor visualização */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    justify-content: space-between;
+    gap: 5.125rem; /* 82px */
 }
 
 .apresentacao__conteudo {
-    width: 60%; /* Ajustado para 60% */
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Ajustado para melhor visualização no celular */
+    gap: 2.5rem; /* 40px */
 }
 
 .apresentacao__conteudo__titulo {
-    font-size: 2rem; /* Ajustado para melhor visualização */
+    font-size: 2.25rem;
     font-family: var(--fonte-primaria);
-    text-align: left; /* Alinhado à esquerda */
+    text-align: justify;
 }
 
 .titulo-destaque {
@@ -72,7 +70,7 @@ body {
 }
 
 .apresentacao__conteudo__texto {
-    font-size: 1.2rem; /* Ajustado para melhor visualização no celular */
+    font-size: 1.5rem;
     font-family: var(--fonte-secundaria);
     text-align: justify;
 }
@@ -80,28 +78,28 @@ body {
 .apresentacao__links {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Ajustado para melhor visualização no celular */
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem; /* Ajustado para melhor visualização no celular */
+    gap: 2rem; /* 32px */
 }
 
 .apresentacao__links__subtitulo {
     font-family: var(--fonte-primaria);
     font-weight: 400;
-    font-size: 1.2rem; /* Ajustado para melhor visualização no celular */
+    font-size: 1.5rem;
 }
 
 .apresentacao__links__navegacao {
     display: flex;
     justify-content: center;
-    gap: 0.5rem; /* Ajustado para melhor visualização no celular */
+    gap: 1rem; /* 16px */
     border: 2px solid var(--cor-terciaria);
-    width: 80%; /* Ajustado para 80% */
+    width: 50%;
     text-align: center;
-    border-radius: 0.5rem;
-    font-size: 1.2rem; /* Ajustado para melhor visualização no celular */
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1.5rem;
     font-weight: 600;
-    padding: 1rem; /* Ajustado para melhor visualização no celular */
+    padding: 1.375rem 0; /* 22px */
     text-decoration: none;
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
@@ -113,35 +111,34 @@ body {
 }
 
 .apresentacao__imagem {
-    width: 30%; /* Ajustado para 30% em telas grandes */
-    max-width: 300px; /* Limite para a imagem */
+    align-self: flex-start; /* Alinha a imagem no topo, em vez de centralizada verticalmente */
+    margin-top: 0; /* Remove qualquer margem superior adicional */
 }
 
 .rodape {
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
-    padding: 1.5rem;
+    padding: 1.5rem; /* 24px */
     text-align: center;
     font-family: var(--fonte-secundaria);
     font-size: 1rem;
     font-weight: 400;
-    margin-top: auto;
-    position: relative;
+    margin-top: auto; /* Garante que o rodapé se mova para o final da página */
+    position: relative; /* Para evitar que ele suba com o conteúdo */
 }
 
-/* Estilos de hover */
 .cabecalho__menu__link:hover {
-    color: var(--cor-hover);
-    font-weight: 700;
-    transition: color 0.3s ease, font-weight 0.3s ease;
+    color: var(--cor-hover); /* Altera a cor ao passar o mouse */
+    font-weight: 700; /* Aumenta o peso da fonte ao passar o mouse */
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Anima a transição */
 }
 
 /* Estilo das abas do projeto (Tabs) */
 .tabs {
     display: flex;
     flex-direction: column;
-    position: sticky;
-    top: 10%;
+    position: sticky; /* Fixa a posição dos botões na rolagem */
+    top: 10%; /* Ajusta a distância do topo */
     width: 200px; /* Largura fixa para os botões */
 }
 
@@ -150,13 +147,13 @@ body {
     color: var(--cor-terciaria);
     border: none;
     font-family: var(--fonte-secundaria);
-    font-size: 1.2rem; /* Ajustado para melhor visualização no celular */
+    font-size: 1.5rem;
     padding: 1rem;
     cursor: pointer;
     transition: color 0.3s, border-left 0.3s;
-    text-align: left;
+    text-align: left; /* Alinha o texto à esquerda */
     width: 100%; /* Faz com que os botões ocupem toda a largura da div */
-    border-left: 3px solid transparent;
+    border-left: 3px solid transparent; /* Espaço para a borda de destaque */
 }
 
 .tabs button:hover, .tabs button.active {
@@ -164,12 +161,13 @@ body {
     border-left: 3px solid var(--cor-secundaria);
 }
 
+/* Conteúdo de cada projeto */
 .tab-content {
     display: none;
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-50px); /* Efeito de deslizamento da esquerda para a direita */
     transition: opacity 0.5s ease, transform 0.5s ease;
-    width: calc(100% - 40px); /* Ajustado para 40px de margem */
+    width: calc(100% - 220px); /* Ajusta a largura considerando a largura das abas + gap */
 }
 
 .tab-content.active {
@@ -178,36 +176,99 @@ body {
     transform: translateX(0);
 }
 
-/* Media Queries */
-@media (max-width: 1200px) {
-    .apresentacao {
-        flex-direction: column; /* Muda para coluna em telas menores */
-        padding: 5%;
-    }
-    .apresentacao__imagem {
-        width: 100%; /* Ajustado para 100% */
-        max-width: 300px;
-        margin: 0 auto; /* Centraliza a imagem */
-    }
-    .apresentacao__conteudo {
-        width: 100%; /* Ajustado para 100% */
-    }
-}
 
-@media (max-width: 768px) {
+
+@media (max-width: 1200px) {
     .cabecalho {
-        padding: 5%;
+        padding: 10%;
     }
     .cabecalho__menu {
-        flex-wrap: wrap; /* Permite quebra de linha */
         justify-content: center;
     }
     .apresentacao {
-        flex-direction: column; /* Alinha itens em coluna em telas menores */
-        align-items: center; /* Centraliza o conteúdo */
+        flex-direction: column-reverse;
+        padding: 5%;
+        align-items: center; /* Centraliza o conteúdo na direção do eixo principal */
+        gap: 5rem; /* Ajustar conforme necessário */
+    }
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+    .apresentacao__imagem {
+        width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
+        max-width: 300px; /* Define um limite para o tamanho da imagem */
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    }
+
+    .tabs {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        position: static; /* Remove o sticky */
+        top: auto;
+    }
+    .tabs button {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    .tabs button:hover, .tabs button.active {
+        border-bottom: 3px solid var(--cor-secundaria);
+        border-left: none;
+    }
+    .tab-content {
+        width: 100%;
+        transform: translateY(50px);
+    }
+    .tab-content.active {
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cabecalho {
+        padding: 15%;
+    }
+    .cabecalho__menu {
+        flex-wrap: nowrap; /* Evita que o menu quebre linha */
+        justify-content: center;
+    }
+    .apresentacao {
+        flex-direction: column-reverse;
+        align-items: center; /* Centraliza o conteúdo na direção do eixo principal */
         padding: 5%;
     }
     .apresentacao__links__navegacao {
-        width: 90%; /* Ajustado para 90% */
+        width: 80%;
     }
+
+    .apresentacao__imagem {
+        width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
+        max-width: 300px; /* Define um limite para o tamanho da imagem */
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    }
+    
+    .tabs {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        position: static;
+    }
+    .tabs button {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    .tabs button:hover, .tabs button.active {
+        border-bottom: 3px solid var(--cor-secundaria);
+        border-left: none;
+    }
+    .tab-content {
+        width: 100%;
+        transform: translateY(50px);
+    }
+    .tab-content.active {
+        transform: translateY(0);
+    }
+    
 }

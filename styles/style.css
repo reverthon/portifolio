@@ -46,24 +46,25 @@ body {
 }
 
 .apresentacao {
-    padding: 5% 5%; /* Ajustado para 5% */
+    padding: 5% 10%; /* Ajustado para 10% */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem; /* Ajustado para melhor visualização no celular */
+    flex-direction: row; /* Alinha os itens lado a lado */
+    align-items: flex-start; /* Alinha no topo */
+    justify-content: space-between; /* Espaçamento entre os itens */
+    gap: 2.5rem; /* Ajustado para melhor visualização */
 }
 
 .apresentacao__conteudo {
-    width: 100%; /* Ajustado para 100% */
+    width: 60%; /* Ajustado para 60% */
     display: flex;
     flex-direction: column;
     gap: 1.5rem; /* Ajustado para melhor visualização no celular */
 }
 
 .apresentacao__conteudo__titulo {
-    font-size: 1.8rem; /* Ajustado para melhor visualização no celular */
+    font-size: 2rem; /* Ajustado para melhor visualização */
     font-family: var(--fonte-primaria);
-    text-align: center; /* Centralizado no celular */
+    text-align: left; /* Alinhado à esquerda */
 }
 
 .titulo-destaque {
@@ -112,9 +113,7 @@ body {
 }
 
 .apresentacao__imagem {
-    align-self: center; /* Alinha a imagem no centro */
-    margin-top: 0;
-    width: 100%; /* Ajustado para 100% */
+    width: 30%; /* Ajustado para 30% em telas grandes */
     max-width: 300px; /* Limite para a imagem */
 }
 
@@ -143,7 +142,7 @@ body {
     flex-direction: column;
     position: sticky;
     top: 10%;
-    width: 100%; /* Ajustado para 100% */
+    width: 200px; /* Largura fixa para os botões */
 }
 
 .tabs button {
@@ -181,32 +180,17 @@ body {
 
 /* Media Queries */
 @media (max-width: 1200px) {
-    .cabecalho {
-        padding: 5%;
-    }
-    .cabecalho__menu {
-        justify-content: center;
-        gap: 1rem; /* Ajustado para evitar muito espaço no celular */
-    }
     .apresentacao {
+        flex-direction: column; /* Muda para coluna em telas menores */
         padding: 5%;
-        align-items: center;
-    }
-    .apresentacao__conteudo {
-        width: auto;
     }
     .apresentacao__imagem {
-        width: 100%;
+        width: 100%; /* Ajustado para 100% */
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto; /* Centraliza a imagem */
     }
-    .tabs {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-    }
-    .tab-content {
-        width: 100%;
+    .apresentacao__conteudo {
+        width: 100%; /* Ajustado para 100% */
     }
 }
 
@@ -219,24 +203,11 @@ body {
         justify-content: center;
     }
     .apresentacao {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Alinha itens em coluna em telas menores */
+        align-items: center; /* Centraliza o conteúdo */
         padding: 5%;
     }
     .apresentacao__links__navegacao {
         width: 90%; /* Ajustado para 90% */
-    }
-    .apresentacao__imagem {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .tabs {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-    }
-    .tab-content {
-        width: 100%;
     }
 }

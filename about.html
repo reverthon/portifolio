@@ -13,10 +13,11 @@
     <header class="cabecalho">
         <nav class="cabecalho__menu">
             <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+            <a class="cabecalho__menu__link active" href="about.html">Sobre mim</a> <!-- Adicionei a classe active aqui -->
             <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
         </nav>
     </header>
+    
     <main class="apresentacao">
         <section class="apresentacao__conteudo">
             <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
@@ -28,12 +29,11 @@
             <h2 class="apresentacao__conteudo__titulo__sub">Estácio</h2>
             <p class="apresentacao__conteudo__texto">Tecnólogo - Análise e Desenvolvimento de Sistemas | Abr. de 2024 - Out. de 2026</p>
 
-            <h2 class="apresentacao__conteudo__titulo__sub">UNIESP Centro Universitario</h2>
+            <h2 class="apresentacao__conteudo__titulo__sub">UNIESP Centro Universitário</h2>
             <p class="apresentacao__conteudo__texto">Pós-Graduação - Gestão de Processos e Inovação | Nov. de 2023 - Mai. de 2024</p>
 
             <h2 class="apresentacao__conteudo__titulo__sub">UFPB - Universidade Federal da Paraíba</h2>
             <p class="apresentacao__conteudo__texto">Bacharelado - Administração | Ago. de 2018 - Out. de 2023</p>
-
         </section>
 
         <div class="imagem-perfil">
@@ -44,6 +44,19 @@
     <footer class="rodape">
         <p>Desenvolvido por Reverthon Santos</p>
     </footer>
+
+    <script>
+        // JavaScript para adicionar a classe 'active' ao link correspondente
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.cabecalho__menu__link');
+            links.forEach(link => {
+                // Compara o href do link com a URL atual da página
+                if (link.href === window.location.href) {
+                    link.classList.add('active'); // Adiciona a classe active ao link correspondente
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

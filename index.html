@@ -18,13 +18,11 @@
         </nav>
     </header>
     <main class="apresentacao">
-
         <section class="apresentacao__conteudo">
             <h1 class="apresentacao__conteudo__titulo">
-                Potencialize seu negócio com<strong class="titulo-destaque"> Automação e Robotização de Processos!
-                </strong>
+                Potencialize seu negócio com<strong class="titulo-destaque"> Automação e Robotização de Processos!</strong>
             </h1>
-            <p class="apresentacao__conteudo__texto ">
+            <p class="apresentacao__conteudo__texto">
                 Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação. 
                 Com anos de experiência em <i>Business Process Management</i> (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais 
                 para aumentar a eficiência, reduzir custos e escalar resultados de maneira sustentável.
@@ -32,22 +30,31 @@
             <div class="apresentacao__links">
                 <h2 class="apresentacao__links__subtitulo">Conecte-se comigo:</h2>
                 <a class="apresentacao__links__navegacao" href="https://www.linkedin.com/in/reverthon-da-silva-correia-santos-0a7988a8/">
-                    <img src="assets/linkedin.png"> Linkedin</a>
+                    <img src="assets/linkedin.png" alt="LinkedIn"> Linkedin</a>
                 <a class="apresentacao__links__navegacao" href="https://github.com/reverthon">
-                    <img src="assets/github.png"> GitHub</a>
+                    <img src="assets/github.png" alt="GitHub"> GitHub</a>
                 <a class="apresentacao__links__navegacao" href="https://instagram.com/reverthon">
-                    <img src="assets/instagram.png"> Instagram</a>
+                    <img src="assets/instagram.png" alt="Instagram"> Instagram</a>
             </div>
         </section>
-
-
         <div class="imagem-perfil">
             <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto Reverthon Santos">
         </div>
     </main>
-        <footer class="rodape">
-            <p>Desenvolvido por Reverthon Santos</p>
-        </footer>
+    <footer class="rodape">
+        <p>Desenvolvido por Reverthon Santos</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.cabecalho__menu__link');
+            links.forEach(link => {
+                // Compara o href do link com a URL atual da página
+                if (link.href === window.location.href) {
+                    link.classList.add('active'); // Adiciona a classe active ao link correspondente
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-

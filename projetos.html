@@ -14,7 +14,7 @@
         <nav class="cabecalho__menu">
             <a class="cabecalho__menu__link" href="index.html">Home</a>
             <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-            <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
+            <a class="cabecalho__menu__link active" href="projetos.html">Projetos</a> <!-- Adicionei a classe active aqui -->
         </nav>
     </header>
 
@@ -24,7 +24,7 @@
             <h1 style="margin-bottom: 20px;">Relatório PIX</h1>
         
             <p style="text-align: justify; margin-bottom: 15px;">
-                Esse projeto foi desenvolvido para atender à necessidade da empresa de realizar uma análise mais detalhada das movimentações financeiras via PIX, tanto em relação a pagamentos quanto recebimentos. Como o sistema original não disponibilizava uma base específica para esse tipo de análise, foi criado um script em Python capaz de processar o extrato de conta corrente gerado no formato PRN, sem configurações padronizadas e disponbilizar as informações em PDF.
+                Esse projeto foi desenvolvido para atender à necessidade da empresa de realizar uma análise mais detalhada das movimentações financeiras via PIX, tanto em relação a pagamentos quanto recebimentos. Como o sistema original não disponibilizava uma base específica para esse tipo de análise, foi criado um script em Python capaz de processar o extrato de conta corrente gerado no formato PRN, sem configurações padronizadas e disponibilizar as informações em PDF.
             </p>
         
             <p style="text-align: justify; margin-bottom: 15px;">
@@ -44,7 +44,7 @@
                 Essa ferramenta se mostrou essencial para a análise da capacidade financeira dos clientes, uma vez que fornece métricas detalhadas sobre os recebimentos e pagamentos via PIX, ajudando os gestores a tomar decisões mais informadas no que se refere à análise de crédito.
             </p>
 
-             <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
+            <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
             <img src="assets/modeloextratopix.png" alt="Relatório PIX" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
             <p style="text-align: center;">
                 <strong>*Imagem para exemplificar com dados fictícios.</strong>
@@ -52,22 +52,21 @@
         
         </section>
 
-
         <section id="Aplicativo P&S Facilitador de Negócios" class="tab-content">
             <h1 style="margin-bottom: 20px;">Aplicativo P&S Facilitador de Negócios</h1>
 
             <p style="text-align: justify; margin-bottom: 15px;">
-                Este projeto foi desenvovido totalmente na plataforma Power Apps da Microsfot, com o objetivo de auxiliar os gestores nas visitas para prospecção de novos clientes.
+                Este projeto foi desenvolvido totalmente na plataforma Power Apps da Microsoft, com o objetivo de auxiliar os gestores nas visitas para prospecção de novos clientes.
             </p>
 
             <p style="text-align: justify; margin-bottom: 15px;">
-                No aplicativo o usuário irá dispor das principais informações sobre os produtos e serviços da empresa, de forma online na "palma da mão".
+                No aplicativo, o usuário irá dispor das principais informações sobre os produtos e serviços da empresa, de forma online na "palma da mão".
             </p>
 
-         <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
-            <img src="assets/MODELOAPP.png" alt="Relatório PIX" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+            <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
+            <img src="assets/MODELOAPP.png" alt="Aplicativo P&S Facilitador de Negócios" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
             <p style="text-align: center;">
-            <strong>*Imagem para exemplificar com dados fictícios.</strong>
+                <strong>*Imagem para exemplificar com dados fictícios.</strong>
             </p>
                      
         </section>
@@ -103,6 +102,17 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
+
+        // JavaScript para adicionar a classe 'active' ao link correspondente
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.cabecalho__menu__link');
+            links.forEach(link => {
+                // Compara o href do link com a URL atual da página
+                if (link.href === window.location.href) {
+                    link.classList.add('active'); // Adiciona a classe active ao link correspondente
+                }
+            });
+        });
     </script>
 </body>
 

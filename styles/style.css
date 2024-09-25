@@ -1,181 +1,267 @@
+/* 
+===============================================
+    Importação de fontes externas
+===============================================
+*/
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
+/* 
+===============================================
+    Variáveis Globais (Cores e Fontes)
+===============================================
+*/
 :root {
-    --cor-primaria: #272829;
+    --cor-primaria: #282a30;
     --cor-secundaria: #FFF6E0;
     --cor-terciaria: #D8D9DA;
     --cor-hover: #61677A;
+    --cor-btmenu: #121418;
+    --cor-menurodape: rgba(0, 0, 0, 0.5);
+    --cor-hover-menu: rgba(255, 255, 255, 0.192);
 
     --fonte-primaria: 'Krona One', sans-serif;
     --fonte-secundaria: 'Montserrat', sans-serif;
+
+    /* Variáveis para tamanhos de fonte */
+    --fonte-titulo-principal: 1.75rem; /* Título principal */
+    --fonte-titulo-secundario: 1.5rem; /* Título secundário */
+    --fonte-texto: 1rem; /* Texto normal */
+    --fonte-menu: 1.5rem; /* Tamanho da fonte do menu */
+    --fonte-rodape: 1rem; /* Tamanho da fonte do rodapé */
 }
 
+/* 
+===============================================
+    Reset de estilos globais
+===============================================
+*/
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* 
+===============================================
+    Estilos para o body (corpo da página)
+===============================================
+*/
 body {
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
-    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da tela */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-
+/* 
+===============================================
+    Seção Cabeçalho
+===============================================
+*/
+/* Estilos para o cabeçalho e menu de navegação */
 .cabecalho {
-    padding: 2% 0 0 15%;
+    background-color: var(--cor-menurodape); /* Cor de fundo do cabeçalho */
+    padding: 1rem; /* Espaçamento interno */
+    height: 80px; /* Altura fixa */
+    box-sizing: border-box; /* Inclui padding na altura total */
+    position: relative;
+}
+
+.cabecalho__container {
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza todo o conteúdo do cabeçalho */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100%; /* Garante que o contêiner ocupe toda a altura do cabeçalho */
+    position: relative; /* Para ajustar a posição do telefone */
 }
 
 .cabecalho__menu {
-    display: flex;
-    gap: 5rem; /* 80px assuming 1rem = 16px */
-    justify-content: flex-start;
-}
-
-
-
-
-.cabecalho__menu {
-    position: relative; /* Necessário para posicionar a borda */
+    display: flex; /* Exibe os links em linha */
+    gap: 2rem; /* Espaçamento entre os links */
 }
 
 .cabecalho__menu__link {
-    font-family: var(--fonte-secundaria);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--cor-terciaria);
-    text-decoration: none;
-    position: relative; /* Necessário para posicionar a borda */
-    padding-bottom: 5px; /* Adiciona um espaço na parte inferior para a borda */
-    transition: color 0.3s ease; /* Transição suave para a cor */
+    color: var(--cor-secundaria); /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-weight: 600; /* Negrito */
+    padding: 0.5rem 1rem; /* Espaçamento interno dos links */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    transition: background-color 0.3s ease-in-out; /* Transição suave para a cor de fundo */
 }
 
-.cabecalho__menu__link:hover,
-.cabecalho__menu__link.active {
-    color: var(--cor-secundaria);
+.cabecalho__menu__link:hover {
+    background-color: var(--cor-hover-menu); /* Cor de fundo ao passar o mouse */
 }
 
-.cabecalho__menu__link:hover::after,
-.cabecalho__menu__link.active::after {
-    content: '';
-    position: absolute;
-    left: 0; /* Posiciona a borda à esquerda */
-    right: 0; /* Faz a borda ocupar toda a largura */
-    bottom: 0; /* Posiciona a borda na parte inferior */
-    height: 3px; /* Altura da borda */
-    background-color: var(--cor-secundaria); /* Cor da borda */
-}
-
-.cabecalho__menu__link.active {
-    font-weight: 700; /* Para destacar ainda mais o link ativo */
-}
-
-.cabecalho__menu__link.active::after {
-    background-color: var(--cor-secundaria); /* A cor da borda ativa */
-}
-
-
-
+/* 
+===============================================
+    Seção Apresentação
+===============================================
+*/
 .apresentacao {
-    padding: 5% 15%; /* Reduz o padding superior */
+    padding: 5% 15%;
     display: flex;
-    align-items: flex-start; /* Alinha os itens ao topo */
-    justify-content: space-between;
-    gap: 5.125rem; /* 82px */
+    flex-direction: row; /* Exibe texto e imagem lado a lado */
+    align-items: flex-start; /* Alinha todos os itens no topo */
+    gap: 5rem; /* Espaçamento entre os elementos */
 }
 
 .apresentacao__conteudo {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem; /* 40px */
+    width: 80%; /* Largura do texto */
+    margin-bottom: 2rem; /* Adiciona espaço abaixo do conteúdo */
+
+}
+
+
+.apresentacao__imagem {
+    width: 100%; 
+    max-width: 200px; /* Ajuste o tamanho máximo da imagem */
+    margin: 0; /* Remove qualquer margem */
 }
 
 .apresentacao__conteudo__titulo {
-    font-size: 2.25rem;
+    font-size: var(--fonte-titulo-principal);
     font-family: var(--fonte-primaria);
     text-align: justify;
+    margin-bottom: 1.5rem; /* Adiciona espaçamento entre o título e o texto */
 }
+
 
 .titulo-destaque {
     color: var(--cor-terciaria);
 }
 
 .apresentacao__conteudo__texto {
-    font-size: 1.5rem;
+    font-size: var(--fonte-texto);
     font-family: var(--fonte-secundaria);
     text-align: justify;
+    margin-bottom: 2rem; /* Espaçamento extra abaixo do texto */
 }
 
+/* 
+===============================================
+    Seção Botões Index
+===============================================
+*/
+
+/* From Uiverse.io by ParasSalunke */
+/* From Uiverse.io by ParasSalunke */
 .apresentacao__links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    gap: 2rem; /* 32px */
-}
+    gap: 1rem;
+    margin-top: 10rem; /* Adiciona espaço acima dos links */
 
+}
+  
 .apresentacao__links__subtitulo {
-    font-family: var(--fonte-primaria);
-    font-weight: 400;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
-
-.apresentacao__links__navegacao {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* 16px */
-    border: 2px solid var(--cor-terciaria);
-    width: 50%;
-    text-align: center;
-    border-radius: 0.5rem; /* 8px */
-    font-size: 1.5rem;
+  
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 1px;
     font-weight: 600;
-    padding: 1.375rem 0; /* 22px */
-    text-decoration: none;
+    line-height: 1.5;
     color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria);
-    transition: background-color 0.3s ease;
+    background-color: #1f2937;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+    width: 200px; /* Tamanho fixo */
+    height: 50px; /* Tamanho fixo */
+    text-align: center; /* Centraliza o texto */
+}
+  
+.button:hover {
+    transform: scale(1.05);
+}
+  
+.button:active {
+    transform: scale(0.95);
+}
+  
+.button-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #38b2ac, #4299e1, #805ad5);
+    padding: 2px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+  
+.button:hover .button-bg {
+    opacity: 100;
+}
+  
+.button-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--cor-btmenu);
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura do botão */
+    height: 100%; /* Garante que o conteúdo ocupe toda a altura do botão */
+}
+  
+.button-content img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+
+.apresentacao__conteudo__titulo__sub {
+    margin-bottom: 0.5rem;
+
 }
 
-.apresentacao__links__navegacao:hover {
-    background-color: var(--cor-hover);
+.apresentacao__conteudo__lista {
+    padding-left: 1.5rem; /* Garante que a lista tenha o mesmo alinhamento */
+    margin-top: 0; /* Remova qualquer margem superior, se necessário */
+    margin-bottom: 15px; text-align: justify;
 }
 
-.apresentacao__imagem {
-    align-self: flex-start; /* Alinha a imagem no topo, em vez de centralizada verticalmente */
-    margin-top: 0; /* Remove qualquer margem superior adicional */
-}
-
+/* 
+===============================================
+    Seção Rodapé
+===============================================
+*/
 .rodape {
-    color: var(--cor-primaria);
-    background-color: var(--cor-terciaria);
-    padding: 1.5rem; /* 24px */
+    color: var(--cor-secundaria);
+    background-color: var(--cor-menurodape);
+    padding: 1.5rem;
     text-align: center;
     font-family: var(--fonte-secundaria);
-    font-size: 1rem;
+    font-size: var(--fonte-rodape);
     font-weight: 400;
-    margin-top: auto; /* Garante que o rodapé se mova para o final da página */
-    position: relative; /* Para evitar que ele suba com o conteúdo */
+    margin-top: auto;
+    position: relative;
 }
 
-.cabecalho__menu__link:hover {
-    color: var(--cor-hover); /* Altera a cor ao passar o mouse */
-    font-weight: 700; /* Aumenta o peso da fonte ao passar o mouse */
-    transition: color 0.3s ease, font-weight 0.3s ease; /* Anima a transição */
-}
-
-/* Estilo das abas do projeto (Tabs) */
+/* 
+===============================================
+    Seção Tabs (abas)
+===============================================
+*/
 .tabs {
     display: flex;
     flex-direction: column;
-    position: sticky; /* Fixa a posição dos botões na rolagem */
-    top: 10%; /* Ajusta a distância do topo */
-    width: 200px; /* Largura fixa para os botões */
+    position: absolute;
+    right: 0; /* Alinha os tabs à direita da página */
+    top: 10%;
+    width: 200px;
 }
 
 .tabs button {
@@ -183,27 +269,27 @@ body {
     color: var(--cor-terciaria);
     border: none;
     font-family: var(--fonte-secundaria);
-    font-size: 1.5rem;
+    font-size: var(--fonte-menu);
     padding: 1rem;
     cursor: pointer;
     transition: color 0.3s, border-left 0.3s;
-    text-align: left; /* Alinha o texto à esquerda */
-    width: 100%; /* Faz com que os botões ocupem toda a largura da div */
-    border-left: 3px solid transparent; /* Espaço para a borda de destaque */
+    text-align: left;
+    width: 100%;
+    border-left: 3px solid transparent;
 }
 
-.tabs button:hover, .tabs button.active {
+.tabs button:hover,
+.tabs button.active {
     color: var(--cor-secundaria);
     border-left: 3px solid var(--cor-secundaria);
 }
 
-/* Conteúdo de cada projeto */
 .tab-content {
     display: none;
     opacity: 0;
-    transform: translateX(-50px); /* Efeito de deslizamento da esquerda para a direita */
+    transform: translateX(-50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    width: calc(100% - 220px); /* Ajusta a largura considerando a largura das abas + gap */
+    width: calc(100% - 220px);
 }
 
 .tab-content.active {
@@ -212,8 +298,13 @@ body {
     transform: translateX(0);
 }
 
+/* 
+===============================================
+    Media Queries (Responsividade)
+===============================================
+*/
 
-
+/* Para telas menores que 1200px */
 @media (max-width: 1200px) {
     .cabecalho {
         padding: 10%;
@@ -224,33 +315,31 @@ body {
     .apresentacao {
         flex-direction: column-reverse;
         padding: 5%;
-        align-items: center; /* Centraliza o conteúdo na direção do eixo principal */
-        gap: 5rem; /* Ajustar conforme necessário */
+        align-items: center;
+        gap: 5rem;
     }
     .apresentacao__conteudo {
         width: auto;
     }
-
     .apresentacao__imagem {
-        width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
-        max-width: 300px; /* Define um limite para o tamanho da imagem */
-        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
-
     .tabs {
         flex-direction: row;
         width: 100%;
         overflow-x: auto;
-        position: static; /* Remove o sticky */
+        position: static;
         top: auto;
     }
     .tabs button {
         border-left: none;
         border-bottom: 3px solid transparent;
     }
-    .tabs button:hover, .tabs button.active {
+    .tabs button:hover,
+    .tabs button.active {
         border-bottom: 3px solid var(--cor-secundaria);
-        border-left: none;
     }
     .tab-content {
         width: 100%;
@@ -261,30 +350,28 @@ body {
     }
 }
 
-
+/* Para telas menores que 768px */
 @media (max-width: 768px) {
     .cabecalho {
         padding: 15%;
     }
     .cabecalho__menu {
-        flex-wrap: nowrap; /* Evita que o menu quebre linha */
+        flex-wrap: nowrap;
         justify-content: center;
     }
     .apresentacao {
         flex-direction: column-reverse;
-        align-items: center; /* Centraliza o conteúdo na direção do eixo principal */
+        align-items: center;
         padding: 5%;
     }
     .apresentacao__links__navegacao {
         width: 80%;
     }
-
     .apresentacao__imagem {
-        width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
-        max-width: 300px; /* Define um limite para o tamanho da imagem */
-        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
-    
     .tabs {
         flex-direction: row;
         width: 100%;
@@ -295,9 +382,9 @@ body {
         border-left: none;
         border-bottom: 3px solid transparent;
     }
-    .tabs button:hover, .tabs button.active {
+    .tabs button:hover,
+    .tabs button.active {
         border-bottom: 3px solid var(--cor-secundaria);
-        border-left: none;
     }
     .tab-content {
         width: 100%;
@@ -306,5 +393,4 @@ body {
     .tab-content.active {
         transform: translateY(0);
     }
-    
 }

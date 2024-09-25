@@ -11,11 +11,14 @@
 
 <body>
     <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-            <a class="cabecalho__menu__link active" href="projetos.html">Projetos</a> <!-- Adicionei a classe active aqui -->
-        </nav>
+        <div class="cabecalho__container">
+            <nav class="cabecalho__menu">
+                <a class="cabecalho__menu__link" href="index.html">Home</a>
+                <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+                <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
+                <a class="cabecalho__menu__link" href="contato.html">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <main class="apresentacao">
@@ -31,7 +34,7 @@
                 O script realiza uma série de tratamentos no relatório para extrair informações cruciais para a análise financeira e de crédito, como:
             </p>
         
-            <ul style="margin-bottom: 15px; text-align: justify;">
+            <ul class="apresentacao__conteudo__lista">
                 <li><strong>Total de Recebimento PIX</strong>: Calcula o valor total dos recebimentos via PIX em um determinado período, permitindo uma visão geral do fluxo de entrada.</li>
                 <li><strong>Ticket Médio dos Recebimentos</strong>: Com base na quantidade de transações e o valor total recebido, o script calcula o ticket médio, ou seja, o valor médio de cada transação PIX recebida, proporcionando uma métrica útil para avaliar o perfil das transações.</li>
                 <li><strong>Concentração de Recebimentos</strong>: O script identifica o percentual de concentração dos recebimentos, ou seja, determina se uma parcela significativa dos recebimentos veio de um único usuário ou de poucos usuários, facilitando a identificação de dependência de clientes específicos.</li>
@@ -45,15 +48,15 @@
             </p>
 
             <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
-            <img src="assets/modeloextratopix.png" alt="Relatório PIX" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+            <img src="assets/modeloextratopix.png" alt="Relatório PIX" style="display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 10px; border: 2px solid rgb(187, 186, 186);">
             <p style="text-align: center;">
                 <strong>*Imagem para exemplificar com dados fictícios.</strong>
             </p>
         
         </section>
 
-        <section id="Aplicativo P&S Facilitador de Negócios" class="tab-content">
-            <h1 style="margin-bottom: 20px;">Aplicativo P&S Facilitador de Negócios</h1>
+        <section id="Aplicativo Power Apps" class="tab-content">
+            <h1 style="margin-bottom: 20px;">Aplicativo Power Apps</h1>
 
             <p style="text-align: justify; margin-bottom: 15px;">
                 Este projeto foi desenvolvido totalmente na plataforma Power Apps da Microsoft, com o objetivo de auxiliar os gestores nas visitas para prospecção de novos clientes.
@@ -64,7 +67,7 @@
             </p>
 
             <!-- Adicionando a imagem logo abaixo do conteúdo textual -->
-            <img src="assets/MODELOAPP.png" alt="Aplicativo P&S Facilitador de Negócios" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+            <img src="assets/MODELOAPP.png" alt="Aplicativo Power Apps" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
             <p style="text-align: center;">
                 <strong>*Imagem para exemplificar com dados fictícios.</strong>
             </p>
@@ -79,7 +82,7 @@
         <!-- Menu de Projetos à Direita -->
         <div class="tabs">
             <button class="tab-link active" onclick="openTab(event, 'Relatório PIX')">Relatório PIX</button>
-            <button class="tab-link" onclick="openTab(event, 'Aplicativo P&S Facilitador de Negócios')">Aplicativo P&S Facilitador de Negócios</button>
+            <button class="tab-link" onclick="openTab(event, 'Aplicativo Power Apps')">Aplicativo Power Apps</button>
             <button class="tab-link" onclick="openTab(event, 'projeto3')">Terceiro Projeto</button>
         </div>
     </main>

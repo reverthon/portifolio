@@ -5,40 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifolio</title>
+    <title>Portfólio</title>
+    <meta name="description" content="Portfólio de Reverthon Santos, especialista em automação de processos e RPA. Explore meus projetos e entre em contato.">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-    <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-            <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
-        </nav>
-    </header>
+    <body>
+        <body>
+            <header class="cabecalho">
+                <div class="cabecalho__container">
+                    <nav class="cabecalho__menu">
+                        <a class="cabecalho__menu__link" href="index.html">Home</a>
+                        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+                        <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
+                        <a class="cabecalho__menu__link" href="contato.html">Contato</a>
+                    </nav>
+                </div>
+            </header>
+        </body>
+        
+    </body>
+    
+
     <main class="apresentacao">
         <section class="apresentacao__conteudo">
             <h1 class="apresentacao__conteudo__titulo">
-                Potencialize seu negócio com<strong class="titulo-destaque"> Automação e Robotização de Processos!</strong>
+                Potencialize seu negócio com <strong class="titulo-destaque">Automação e Robotização de Processos!</strong>
             </h1>
             <p class="apresentacao__conteudo__texto">
-                Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação. 
-                Com anos de experiência em <i>Business Process Management</i> (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais 
+                Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação.
+                Com anos de experiência em <i>Business Process Management</i> (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais
                 para aumentar a eficiência, reduzir custos e escalar resultados de maneira sustentável.
             </p>
             <div class="apresentacao__links">
                 <h2 class="apresentacao__links__subtitulo">Conecte-se comigo:</h2>
-                <a class="apresentacao__links__navegacao" href="https://www.linkedin.com/in/reverthon-da-silva-correia-santos-0a7988a8/">
-                    <img src="assets/linkedin.png" alt="LinkedIn"> Linkedin</a>
-                <a class="apresentacao__links__navegacao" href="https://github.com/reverthon">
-                    <img src="assets/github.png" alt="GitHub"> GitHub</a>
-                <a class="apresentacao__links__navegacao" href="https://instagram.com/reverthon">
-                    <img src="assets/instagram.png" alt="Instagram"> Instagram</a>
+                <a class="button" href="https://www.linkedin.com/in/reverthon-da-silva-correia-santos-0a7988a8/" target="_blank" aria-label="LinkedIn de Reverthon Santos">
+                    <span class="button-bg"></span>
+                    <span class="button-content">
+                        <img src="assets/linkedin.png" alt="LinkedIn"> Linkedin
+                    </span>
+                </a>
+                <a class="button" href="https://github.com/reverthon" target="_blank" aria-label="GitHub de Reverthon Santos">
+                    <span class="button-bg"></span>
+                    <span class="button-content">
+                        <img src="assets/github.png" alt="GitHub"> GitHub
+                    </span>
+                </a>
+                <a class="button" href="https://instagram.com/reverthon" target="_blank" aria-label="Instagram de Reverthon Santos">
+                    <span class="button-bg"></span>
+                    <span class="button-content">
+                        <img src="assets/instagram.png" alt="Instagram"> Instagram
+                    </span>
+                </a>
             </div>
         </section>
         <div class="imagem-perfil">
-            <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto Reverthon Santos">
+            <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto de Reverthon Santos">
         </div>
     </main>
     <footer class="rodape">
@@ -46,15 +69,15 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const links = document.querySelectorAll('.cabecalho__menu__link');
             links.forEach(link => {
-                // Compara o href do link com a URL atual da página
-                if (link.href === window.location.href) {
-                    link.classList.add('active'); // Adiciona a classe active ao link correspondente
+                if (link.href === window.location.href.split('#')[0]) { // Lida com âncoras
+                    link.classList.add('active');
                 }
             });
         });
     </script>
 </body>
+
 </html>

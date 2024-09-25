@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__container">
+            <nav class="cabecalho__menu">
+                <a class="cabecalho__menu__link" href="index.html">Home</a>
+                <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+                <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
+                <a class="cabecalho__menu__link" href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Contato</h1>
+
+            <h2 class="apresentacao__conteudo__titulo__sub">Celular & WhatsApp</h2>
+            <p class="apresentacao__conteudo__texto">+55 (83) 99886-1555</p>
+
+            <h2 class="apresentacao__conteudo__titulo__sub">E-mail</h2>
+            <p class="apresentacao__conteudo__texto">reverthonds@gmail.com</p>
+            
+    
+        </section>
+
+        <div class="imagem-perfil">
+            <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto Reverthon Santos">
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Reverthon Santos</p>
+    </footer>
+
+    <script>
+        // JavaScript para adicionar a classe 'active' ao link correspondente
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.cabecalho__menu__link');
+            links.forEach(link => {
+                // Compara o href do link com a URL atual da página
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

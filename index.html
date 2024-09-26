@@ -11,59 +11,67 @@
 </head>
 
 <body>
-    <body>
-        <body>
-            <header class="cabecalho">
-                <div class="cabecalho__container">
-                    <nav class="cabecalho__menu">
-                        <a class="cabecalho__menu__link" href="index.html">Home</a>
-                        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-                        <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
-                        <a class="cabecalho__menu__link" href="contato.html">Contato</a>
-                    </nav>
-                </div>
-            </header>
-        </body>
-        
-    </body>
-    
+    <header class="cabecalho">
+        <div class="cabecalho__container">
+            <nav class="cabecalho__menu">
+                <a class="cabecalho__menu__link" href="index.html">Home</a>
+                <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+                <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
+                <a class="cabecalho__menu__link" href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">
-                Potencialize seu negócio com <strong class="titulo-destaque">Automação e Robotização de Processos!</strong>
-            </h1>
-            <p class="apresentacao__conteudo__texto">
-                Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação.
-                Com anos de experiência em <i>Business Process Management</i> (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais
-                para aumentar a eficiência, reduzir custos e escalar resultados de maneira sustentável.
-            </p>
-            <div class="apresentacao__links">
-                <h2 class="apresentacao__links__subtitulo">Conecte-se comigo:</h2>
-                <a class="button" href="https://www.linkedin.com/in/reverthon-da-silva-correia-santos-0a7988a8/" target="_blank" aria-label="LinkedIn de Reverthon Santos">
-                    <span class="button-bg"></span>
-                    <span class="button-content">
-                        <img src="assets/linkedin.png" alt="LinkedIn"> Linkedin
-                    </span>
-                </a>
-                <a class="button" href="https://github.com/reverthon" target="_blank" aria-label="GitHub de Reverthon Santos">
-                    <span class="button-bg"></span>
-                    <span class="button-content">
-                        <img src="assets/github.png" alt="GitHub"> GitHub
-                    </span>
-                </a>
-                <a class="button" href="https://instagram.com/reverthon" target="_blank" aria-label="Instagram de Reverthon Santos">
-                    <span class="button-bg"></span>
-                    <span class="button-content">
-                        <img src="assets/instagram.png" alt="Instagram"> Instagram
-                    </span>
-                </a>
+        <!-- Card adaptado com texto e imagem de perfil -->
+        <aside class="card bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <div class="flex justify-between items-center">
+                <div class="flex" style="margin-bottom: 20px;">
+                    <div class="w-3 h-3 rounded-full bg-red-500" style="margin-right: 10px;"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500" style="margin-right: 10px;"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
             </div>
+            <div class="flex mt-4 items-center">
+                <div class="flex-1">
+                    <h1 class="apresentacao__conteudo__titulo text-green-400">
+                        Potencialize seu negócio com Automação e Robotização de Processos!
+                    </h1>
+                    <p class="apresentacao__conteudo__texto text-white">
+                        Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação. Com anos de experiência em Business Process Management (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais para aumentar a eficiência, reduzir custos e escalar resultados de maneira sustentável.
+                    </p>
+                </div>
+                <!-- Imagem dentro do card -->
+                <div class="imagem-perfil">
+                    <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto Reverthon Santos">
+                </div>
+            </div>
+        </aside>
+    
+
+        <section class="apresentacao__links">
+            <h2 class="apresentacao__links__subtitulo">Conecte-se comigo:</h2>
+            <a class="button" href="https://www.linkedin.com/in/reverthon-da-silva-correia-santos-0a7988a8/" target="_blank" aria-label="LinkedIn de Reverthon Santos">
+                <span class="button-bg"></span>
+                <span class="button-content">
+                    <img src="assets/linkedin.png" alt="LinkedIn"> Linkedin
+                </span>
+            </a>
+            <a class="button" href="https://github.com/reverthon" target="_blank" aria-label="GitHub de Reverthon Santos">
+                <span class="button-bg"></span>
+                <span class="button-content">
+                    <img src="assets/github.png" alt="GitHub"> GitHub
+                </span>
+            </a>
+            <a class="button" href="https://instagram.com/reverthon" target="_blank" aria-label="Instagram de Reverthon Santos">
+                <span class="button-bg"></span>
+                <span class="button-content">
+                    <img src="assets/instagram.png" alt="Instagram"> Instagram
+                </span>
+            </a>
         </section>
-        <div class="imagem-perfil">
-            <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto de Reverthon Santos">
-        </div>
     </main>
+    
     <footer class="rodape">
         <p>Desenvolvido por Reverthon Santos</p>
     </footer>

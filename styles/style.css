@@ -450,3 +450,36 @@ body {
     }
 }
 
+/* Para telas menores que 375px (ex: iPhone X) */
+@media (max-width: 375px) {
+    .cabecalho {
+        padding: 0.5rem; /* Reduz o padding do cabeçalho */
+    }
+
+    .cabecalho__menu {
+        flex-direction: column; /* Coloca os itens do menu em coluna */
+        align-items: center; /* Centraliza os itens do menu */
+        gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+        font-size: var(--fonte-texto); /* Ajusta o tamanho da fonte */
+    }
+
+    .apresentacao {
+        padding: 5%;
+        flex-direction: column; /* Mantém o layout em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    .apresentacao__imagem {
+        max-width: 200px; /* Reduz o tamanho da imagem */
+    }
+
+    .card .imagem-perfil {
+        flex: 0 0 80px; /* Ajuste a largura da imagem no card */
+    }
+
+    .button {
+        width: 150px; /* Ajusta o tamanho do botão */
+        height: 40px; /* Ajusta a altura do botão */
+    }
+}
+

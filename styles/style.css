@@ -63,23 +63,21 @@ body {
 /* Estilos para o cabeçalho e menu de navegação */
 .cabecalho {
     background-color: var(--cor-menurodape);
-    padding: 1rem;
-    height: 80px;
+    padding: 1rem 0; /* Apenas padding vertical, para evitar altura fixa */
     box-sizing: border-box;
-    position: relative;
 }
 
 .cabecalho__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: relative;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: auto; /* Permite que a altura do cabeçalho se ajuste ao conteúdo */
 }
 
 .cabecalho__menu {
     display: flex;
     gap: 2rem;
+    justify-content: center; /* Garante que os itens do menu estejam centralizados */
 }
 
 .cabecalho__menu__link {
@@ -159,6 +157,7 @@ body {
     width: 80%; /* Ocupar 80% da largura do contêiner pai */
     max-width: 800px;
     font-family: 'Courier New', monospace;
+    overflow: hidden; /* Impede que o conteúdo saia do card */
 }
 
 .card .flex-1 {
@@ -169,14 +168,14 @@ body {
 /* Imagem dentro do card */
 .card .imagem-perfil {
     flex: 0 0 150px; /* Ajusta a largura da imagem */
-    height: 150px;
+    height: auto; /* Permite que a altura se ajuste */
     border-radius: 50%;
-    overflow: hidden;
+    overflow: hidden; /* Esconde qualquer conteúdo que saia do contêiner */
 }
 
 .card .imagem-perfil img {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção */
     border-radius: 50%;
 }
 
@@ -363,7 +362,7 @@ body {
         padding: 10%;
     }
     .cabecalho__menu {
-        justify-content: center;
+        justify-content: center; /* Garante que o menu esteja centralizado horizontalmente */
     }
     .apresentacao {
         flex-direction: column;
@@ -406,10 +405,16 @@ body {
 /* Para telas menores que 768px */
 @media (max-width: 768px) {
     .cabecalho__menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        flex-direction: row; /* Mantém os itens do menu em linha */
+        justify-content: center; /* Garante que o menu esteja centralizado horizontalmente */
+        gap: 1rem; /* Espaçamento entre os itens */
     }
+
+    .cabecalho__menu__link {
+        font-size: var(--fonte-texto); /* Ajusta o tamanho da fonte */
+        white-space: nowrap; /* Evita que os itens do menu se movam para a próxima linha */
+    }
+
     .apresentacao {
         padding: 5%;
     }
@@ -418,6 +423,10 @@ body {
     }
     .apresentacao__imagem {
         max-width: 250px;
+    }
+
+    .card .imagem-perfil {
+        flex: 0 0 100px; /* Ajuste a largura da imagem em telas menores */
     }
 }
 
@@ -433,10 +442,11 @@ body {
         font-size: var(--fonte-titulo-secundario);
     }
     .tabs {
-        flex-direction: column;
+        flex-direction: column; /* Muda a direção das abas para coluna */
     }
     .tabs button {
         padding: 0.5rem;
         font-size: var(--fonte-texto);
     }
 }
+

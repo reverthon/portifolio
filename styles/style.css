@@ -353,8 +353,4 @@ body {
     font-size: var(--fonte-texto--media);
     }
 
-    .imagem-perfil {
-        flex: 0 0 150px;
-        height: 150px;
-    }
 }

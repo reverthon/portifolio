@@ -113,7 +113,7 @@ body {
     align-items: center;
     padding: 5% 15%;
     gap: 5rem;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    /*flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
    /* text-align: left; /* Alinhamento à esquerda */
 }
 

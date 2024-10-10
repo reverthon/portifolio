@@ -354,7 +354,8 @@ body {
     }
 
     .imagem-perfil {
-        flex: 0 0 150px; /* Ajuste o tamanho conforme necessário */
+        flex: none;
+        flex: 150px; /* Ajuste o tamanho conforme necessário */
         height: 150px; /* Ajuste o tamanho conforme necessário */
     }
 

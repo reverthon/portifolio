@@ -18,9 +18,14 @@
     --cor-btmenu: #121418;
     --cor-menurodape: rgba(0, 0, 0, 0.5);
     --cor-hover-menu: rgba(255, 255, 255, 0.192);
+    
+    --cor-vermelho: #ff0000;
+    --cor-amarelo: #f2c200;
+    --cor-verde: #00b300;
 
     --fonte-primaria: 'Krona One', sans-serif;
     --fonte-secundaria: 'Montserrat', sans-serif;
+    --fonte-monospace: 'Courier New', monospace;
 
     /* Variáveis para tamanhos de fonte */
     --fonte-titulo-principal: 1.75rem; /* Título principal */
@@ -65,6 +70,9 @@ body {
     background-color: var(--cor-menurodape);
     padding: 1rem 0; /* Apenas padding vertical, para evitar altura fixa */
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cabecalho__container {
@@ -105,25 +113,30 @@ body {
     padding: 5% 15%;
     gap: 5rem;
     flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    text-align: left; /* Alinhamento à esquerda */
 }
 
 .apresentacao__conteudo {
     flex: 1;
     margin-right: 2rem;
+    text-align: justify; /* Justificação do texto */
 }
 
 .apresentacao__conteudo__titulo {
     font-size: var(--fonte-titulo-principal);
     font-family: var(--fonte-primaria);
     margin-bottom: 1.5rem;
-    text-align: left;
 }
 
 .apresentacao__conteudo__texto {
     font-size: var(--fonte-texto);
     font-family: var(--fonte-secundaria);
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: justify; /* Justificação do texto */
+}
+
+.apresentacao__conteudo__lista {
+    margin-bottom: 2rem; /* ou outro valor que você preferir */
 }
 
 /* Estilo da imagem de perfil */
@@ -141,6 +154,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /* 
@@ -156,7 +170,7 @@ body {
     border-radius: 0.75rem;
     width: 80%; /* Ocupar 80% da largura do contêiner pai */
     max-width: 800px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--fonte-monospace);
     overflow: hidden; /* Impede que o conteúdo saia do card */
 }
 
@@ -165,7 +179,6 @@ body {
     margin-right: 2rem; /* Espaçamento entre o texto e a imagem */
 }
 
-/* Imagem dentro do card */
 .card .imagem-perfil {
     flex: 0 0 150px; /* Ajusta a largura da imagem */
     height: auto; /* Permite que a altura se ajuste */
@@ -177,6 +190,7 @@ body {
     max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
     height: auto; /* Mantém a proporção */
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .card .flex {
@@ -192,15 +206,15 @@ body {
 }
 
 .bg-red-500 {
-    background-color: #ff0000; /* Vermelho */
+    background-color: var(--cor-vermelho); /* Vermelho */
 }
 
 .bg-yellow-500 {
-    background-color: #f2c200; /* Amarelo */
+    background-color: var(--cor-amarelo); /* Amarelo */
 }
 
 .bg-green-500 {
-    background-color: #00b300; /* Verde */
+    background-color: var(--cor-verde); /* Verde */
 }
 
 .card__image {
@@ -220,7 +234,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    /* margin-top: 0.2rem; */
 }
 
 .apresentacao__links__subtitulo {
@@ -238,9 +251,10 @@ body {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     border-radius: 1rem;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
     text-decoration: none;
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     height: 50px;
     text-align: center;
 }
@@ -294,192 +308,43 @@ body {
 .rodape {
     color: var(--cor-secundaria);
     background-color: var(--cor-menurodape);
-    padding: 1.5rem;
+    padding: 2rem;
     text-align: center;
-    font-family: var(--fonte-secundaria);
-    font-size: var(--fonte-rodape);
-    font-weight: 400;
     margin-top: auto;
 }
 
-/* 
-===============================================
-    Seção Tabs (abas)
-===============================================
-*/
-.tabs {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 10%;
-    width: 200px;
-}
-
-.tabs button {
-    background-color: var(--cor-primaria);
-    color: var(--cor-terciaria);
-    border: none;
+.rodape__texto {
+    font-size: var(--fonte-rodape);
     font-family: var(--fonte-secundaria);
-    font-size: var(--fonte-menu);
-    padding: 1rem;
-    cursor: pointer;
-    transition: color 0.3s, border-left 0.3s;
-    text-align: left;
-    width: 100%;
-    border-left: 3px solid transparent;
-}
-
-.tabs button:hover,
-.tabs button.active {
-    color: var(--cor-secundaria);
-    border-left: 3px solid var(--cor-secundaria);
-}
-
-.tab-content {
-    display: none;
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    width: calc(100% - 220px);
-}
-
-.tab-content.active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
+    text-align: justify; /* Justificação do texto */
 }
 
 /* 
 ===============================================
-    Media Queries (Responsividade)
+    Estilos Responsivos
 ===============================================
 */
-
-/* Para telas menores que 1200px */
-@media (max-width: 1200px) {
-    .cabecalho {
-        padding: 10%;
-    }
-    .cabecalho__menu {
-        justify-content: center; /* Garante que o menu esteja centralizado horizontalmente */
-    }
-    .apresentacao {
-        flex-direction: column;
-        padding: 5%;
-        align-items: center;
-        gap: 5rem;
-    }
-    .apresentacao__conteudo {
-        width: auto;
-    }
-    .apresentacao__imagem {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .tabs {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-        position: static;
-        top: auto;
-    }
-    .tabs button {
-        border-left: none;
-        border-bottom: 3px solid transparent;
-    }
-    .tabs button:hover,
-    .tabs button.active {
-        border-bottom: 3px solid var(--cor-secundaria);
-    }
-    .tab-content {
-        width: 100%;
-        transform: translateY(50px);
-    }
-    .tab-content.active {
-        transform: translateY(0);
-    }
-}
-
-/* Para telas menores que 768px */
 @media (max-width: 768px) {
     .cabecalho__menu {
-        flex-direction: row; /* Mantém os itens do menu em linha */
-        justify-content: center; /* Garante que o menu esteja centralizado horizontalmente */
-        gap: 1rem; /* Espaçamento entre os itens */
-    }
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    .cabecalho__menu__link {
-        font-size: var(--fonte-texto); /* Ajusta o tamanho da fonte */
-        white-space: nowrap; /* Evita que os itens do menu se movam para a próxima linha */
     }
 
     .apresentacao {
         padding: 5%;
-    }
-    .tabs {
-        width: 100%;
-    }
-    .apresentacao__imagem {
-        max-width: 250px;
+        gap: 2rem;
+        text-align: left; /* Alinhamento à esquerda */
     }
 
-    .card .imagem-perfil {
-        flex: 0 0 100px; /* Ajuste a largura da imagem em telas menores */
+    .apresentacao__conteudo {
+        margin-right: 0;
+        text-align: justify; /* Justificação do texto */
+    }
+
+    .imagem-perfil {
+        flex: 0 0 150px;
+        height: 150px;
     }
 }
-
-/* Para telas menores que 480px */
-@media (max-width: 480px) {
-    .cabecalho {
-        padding: 0.5rem;
-    }
-    .cabecalho__menu__link {
-        font-size: var(--fonte-texto);
-    }
-    .apresentacao__conteudo__titulo {
-        font-size: var(--fonte-titulo-secundario);
-    }
-    .tabs {
-        flex-direction: column; /* Muda a direção das abas para coluna */
-    }
-    .tabs button {
-        padding: 0.5rem;
-        font-size: var(--fonte-texto);
-    }
-}
-
-/* Para telas menores que 375px (ex: iPhone X) */
-@media (max-width: 375px) {
-    .cabecalho {
-        padding: 0.5rem; /* Reduz o padding do cabeçalho */
-    }
-
-    .cabecalho__menu {
-        flex-direction: column; /* Coloca os itens do menu em coluna */
-        align-items: center; /* Centraliza os itens do menu */
-        gap: 0.5rem; /* Reduz o espaçamento entre os itens */
-        font-size: var(--fonte-texto); /* Ajusta o tamanho da fonte */
-    }
-
-    .apresentacao {
-        padding: 5%;
-        flex-direction: column; /* Mantém o layout em coluna */
-        align-items: center; /* Centraliza o conteúdo */
-    }
-
-    .apresentacao__imagem {
-        max-width: 200px; /* Reduz o tamanho da imagem */
-    }
-
-    .card .imagem-perfil {
-        flex: 0 0 80px; /* Ajuste a largura da imagem no card */
-    }
-
-    .button {
-        width: 150px; /* Ajusta o tamanho do botão */
-        height: 40px; /* Ajusta a altura do botão */
-    }
-}
-

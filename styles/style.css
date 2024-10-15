@@ -15,9 +15,9 @@
     --cor-secundaria: #FFF6E0;
     --cor-terciaria: #D8D9DA;
     --cor-hover: #61677A;
-    --cor-btmenu: #121418;
+    --cor-btmenu: #ad9f9fc4;
     --cor-menurodape: rgba(0, 0, 0, 0.5);
-    --cor-hover-menu: rgba(255, 255, 255, 0.192);
+    --cor-menu--back: rgba(43, 42, 42, 0.753);
     
     --cor-vermelho: #ff0000;
     --cor-amarelo: #f2c200;
@@ -45,6 +45,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Herda a cor do texto do elemento pai */
 }
 
 /* 
@@ -53,112 +55,48 @@
 ===============================================
 */
 body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.767)), url('../assets/fundo.jpg');
     background-color: var(--cor-primaria);
+    background-size: cover; 
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da janela */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    display: flex; /* Torna o body um contêiner flex */
+    flex-direction: column; /* Alinha os filhos (cabeçalho, main, rodapé) em coluna */
 }
 
-/* 
-===============================================
-    Seção Cabeçalho
-===============================================
-*/
-/* Estilos para o cabeçalho e menu de navegação */
 .cabecalho {
-    background-color: var(--cor-menurodape);
-    padding: 1rem 0; /* Apenas padding vertical, para evitar altura fixa */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+    width: 80%; /* Ajusta a largura do cabeçalho */
+    max-width: 900px; /* Mantém a largura máxima igual ao do card */
+    padding: 1rem; /* Adiciona espaçamento interno */
+    display: flex; /* Para alinhar os itens do menu */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    position: relative; /* Pode ajudar com o layout */
+    flex-direction: row;
     align-items: center;
+    margin: 0 auto; /* Centraliza o cabeçalho na página */
 }
 
-.cabecalho__container {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    height: auto; /* Permite que a altura do cabeçalho se ajuste ao conteúdo */
+/* Estilos para os itens do menu */
+.radio-inputs {
+    display: flex; /* Certifique-se de que os itens do menu estão em linha */
+    justify-content: center; /* Centraliza os itens do menu */
 }
 
-.cabecalho__menu {
-    display: flex;
-    gap: 2rem;
-    justify-content: center; /* Garante que os itens do menu estejam centralizados */
+.radio {
+    margin: 0 1rem; /* Adiciona margem horizontal para espaçar os itens */
 }
 
-.cabecalho__menu__link {
-    color: var(--cor-secundaria);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.cabecalho__menu__link:hover {
-    background-color: var(--cor-hover-menu);
-}
-
-/* 
-===============================================
-    Seção Apresentação
-===============================================
-*/
 .apresentacao {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo da seção */
-    align-items: center;
-    padding: 5% 15%;
-    gap: 5rem;
-    flex-direction: column;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
-   /* text-align: left; /* Alinhamento à esquerda */
+    flex-direction: column; /* Coloca os elementos em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    justify-content: flex-start; /* Garante que comece do topo */
+    margin-top: 20px; /* Espaçamento entre o cabeçalho e o card */
+    flex: 1; /* Faz com que a seção de apresentação ocupe o espaço restante */
 }
-
-.apresentacao__conteudo {
-    flex: 1;
-    margin-right: 2rem;
-    text-align: justify; /* Justificação do texto */
-}
-
-.apresentacao__conteudo__titulo {
-    font-size: var(--fonte-titulo-principal);
-    font-family: var(--fonte-primaria);
-    margin-bottom: 1.5rem;
-}
-
-.apresentacao__conteudo__texto {
-    font-size: var(--fonte-texto);
-    font-family: var(--fonte-secundaria);
-    margin-bottom: 2rem;
-    text-align: justify; /* Justificação do texto */
-}
-
-.apresentacao__conteudo__lista {
-    margin-bottom: 2rem; /* ou outro valor que você preferir */
-}
-
-/* Estilo da imagem de perfil */
-.imagem-perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.apresentacao__imagem {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 /* 
 ===============================================
     CARDS
@@ -166,38 +104,23 @@ body {
 */
 
 .card {
-    background-color: #000; /* Fundo preto */
+    background-color: var(--cor-menu--back); 
     color: #fff; /* Texto branco */
     padding: 1.5rem;
     border-radius: 0.75rem;
-    width: 80%; /* Ocupar 80% da largura do contêiner pai */
-    max-width: 800px;
+    width: 960%; /* Aumenta a largura do card */
+    height: auto; /* Aumenta a altura do card */
+    max-width: 900px; /* Pode ajustar o máximo se desejar */
+    padding: 2rem; /* Aumenta o espaçamento interno */
     font-family: var(--fonte-monospace);
     overflow: hidden; /* Impede que o conteúdo saia do card */
+    margin-top: 5rem;
 }
 
-.card .flex-1 {
-    flex: 1;
-    margin-right: 2rem; /* Espaçamento entre o texto e a imagem */
-}
-
-.card .imagem-perfil {
-    flex: 0 0 150px; /* Ajusta a largura da imagem */
-    height: auto; /* Permite que a altura se ajuste */
-    border-radius: 50%;
-    overflow: hidden; /* Esconde qualquer conteúdo que saia do contêiner */
-}
-
-.card .imagem-perfil img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-    height: auto; /* Mantém a proporção */
-    border-radius: 50%;
-    object-fit: cover;
-}
 
 .card .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -225,6 +148,124 @@ body {
     height: 5rem;
 }
 
+.imagem-card {
+    width: 350px; /* Aumenta a largura da imagem */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 40px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: var(--fonte-titulo-principal);
+    font-family: var(--fonte-primaria);
+    margin-bottom: 3rem;
+    text-align:left;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: var(--fonte-texto);
+    font-family: var(--fonte-secundaria);
+    margin-bottom: 2rem;
+    text-align: justify; /* Justificação do texto */
+}
+
+
+/* From Uiverse.io by Spacious74 */ 
+.radio-inputs {
+    position: relative;
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: var(--cor-menu--back); 
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 90%;
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+
+  .radio-inputs .radio .name:hover {
+    color: #ffffff8c; /* Altera a cor do texto no hover */
+    background-color: var(--cor-btmenu); /* Pode adicionar fundo se necessário */
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: var(--cor-btmenu);
+    font-weight: 600;
+}
+
+/* Efeito hover quando está selecionado */
+.radio-inputs .radio input:checked + .name:hover {
+    color: #1d1d29;
+}
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: var(--cor-btmenu);
+    font-weight: 600;
+  }
+  .radio-inputs .radio input + .name:hover {
+    color: #ffffff8c;
+  }
+  .radio-inputs .radio input:checked + .name:hover {
+    color: #1d1d29;
+  }
+  
+  .radio-inputs .radio input:checked + .name::after,
+  .radio-inputs .radio input:checked + .name::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #24080104;
+    bottom: 0;
+  }
+  
+  .radio-inputs .radio input:checked + .name::after {
+    right: -10px;
+    border-bottom-left-radius: 300px;
+    box-shadow: var(--cor-menu--back); 
+  }
+  .radio-inputs .radio input:checked + .name::before {
+    left: -10px;
+    border-bottom-right-radius: 300px;
+    box-shadow: var(--cor-btmenu); 
+  }
+
+  /* 
+===============================================
+    Seção Rodapé
+===============================================
+*/
+.rodape {
+    color: var(--cor-secundaria);
+    background-color: var(--cor-menu--back);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 10rem;
+    height: 10px;
+}
+
+.rodape__texto {
+    font-size: var(--fonte-rodape);
+    font-family: var(--fonte-secundaria);
+    text-align: justify; /* Justificação do texto */
+}
+
 /* 
 ===============================================
     Seção Botões
@@ -236,6 +277,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    margin-top: 5rem;
 }
 
 .apresentacao__links__subtitulo {
@@ -249,7 +291,7 @@ body {
     font-weight: 600;
     line-height: 1.5;
     color: var(--cor-secundaria);
-    background-color: #1f2937;
+    background-color:var(--cor-menu--back);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     border-radius: 1rem;
@@ -292,7 +334,7 @@ body {
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     border-radius: 1rem;
-    background-color: var(--cor-btmenu);
+    background-color: var(--cor-menu--back);
     width: 100%;
     height: 100%;
 }
@@ -302,68 +344,58 @@ body {
     height: 1.5rem;
 }
 
-/* 
-===============================================
-    Seção Rodapé
-===============================================
-*/
-.rodape {
-    color: var(--cor-secundaria);
-    background-color: var(--cor-menurodape);
-    padding: 2rem;
-    text-align: center;
-    margin-top: auto;
-}
 
-.rodape__texto {
-    font-size: var(--fonte-rodape);
-    font-family: var(--fonte-secundaria);
-    text-align: justify; /* Justificação do texto */
-}
 
-/* 
-===============================================
-    Estilos Responsivos
-===============================================
-*/
-@media (max-width: 768px) {
-    .cabecalho__menu {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
+/* Media query para telas menores que 900px */
+@media (max-width: 900px) {
+    .card {
+        display: flex;
+        flex-direction: column; /* Coloca a imagem e o texto em coluna */
+        align-items: center; /* Centraliza o conteúdo no card */
+        width: 80%; /* Ajusta a largura do card */
+        height: auto; /* Deixa a altura ajustável conforme o conteúdo */
+        max-width: 600px; /* Ajusta a largura máxima */
+        padding: 1rem; /* Diminui o espaçamento interno */
     }
 
-    .apresentacao {
-        padding: 5%;
-        gap: 2rem;
-        text-align: left; /* Alinhamento à esquerda */
+    .flex.justify-start.items-start {
+        margin-bottom: 20px; /* Mantém um espaço abaixo das bolinhas */
+        align-self: flex-start; /* Garante que as bolinhas fiquem no canto esquerdo */
     }
 
-    .apresentacao__conteudo {
-        margin-right: 0;
-        text-align: justify; /* Justificação do texto */
+    .flex.mt-4 {
+        flex-direction: column; /* Mantém a coluna */
+        align-items: center; /* Centraliza a imagem e o texto */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Garante que ocupe a largura total */
+    }
+
+    .imagem-card {
+        width: 200px; /* Reduz o tamanho da imagem */
+        margin-bottom: 1rem; /* Adiciona espaço abaixo da imagem */
     }
 
     .apresentacao__conteudo__titulo {
-    font-size: var(--fonte-titulo-secundario);
+        font-size: 1.25rem; /* Reduz o tamanho do título */
     }
 
     .apresentacao__conteudo__texto {
-    font-size: var(--fonte-texto--media);
+        font-size: 0.85rem; /* Reduz o tamanho do texto */
     }
 
-    .imagem-perfil {
-        flex: 50px; /* Ajuste o tamanho conforme necessário */
-        height: 50px; /* Ajuste o tamanho conforme necessário */
+    /* Ajustes para o menu */
+    .radio-inputs {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        width: 100%; /* Garante que ocupe a largura total */
+        padding: 0; /* Remove o padding para evitar overflow */
     }
 
-    .apresentacao__imagem {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        aspect-ratio: 1 / 1;
+    .radio {
+        margin: 0.5rem 0; /* Adiciona espaçamento vertical entre os itens do menu */
+        width: 100%; /* Garante que os itens do menu ocupem a largura total */
+        text-align: center; /* Centraliza o texto dos itens */
     }
-
 }
+
+
+

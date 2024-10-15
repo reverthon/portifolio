@@ -12,32 +12,36 @@
 
 <body>
     <header class="cabecalho">
-        <div class="cabecalho__container">
-            <nav class="cabecalho__menu">
-                <a class="cabecalho__menu__link" href="index.html">Home</a>
-                <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-                <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
-                <a class="cabecalho__menu__link" href="contato.html">Contato</a>
-            </nav>
+        <div class="radio-inputs">
+            <label class="radio" for="home">
+                <input type="radio" id="home" name="radio" value="index.html" checked />
+                <a href="index.html" class="name">Home</a>
+            </label>
+            <label class="radio" for="sobre">
+                <input type="radio" id="sobre" name="radio" value="about.html" />
+                <a href="about.html" class="name">Sobre</a>
+            </label>
+            <label class="radio" for="projetos">
+                <input type="radio" id="projetos" name="radio" value="projetos.html" />
+                <a href="projetos.html" class="name">Projetos</a>
+            </label>
+            <label class="radio" for="contato">
+                <input type="radio" id="contato" name="radio" value="contato.html" />
+                <a href="contato.html" class="name">Contato</a>
+            </label>
         </div>
     </header>
 
     <main class="apresentacao">
-        <!-- FOTO PERFIL -->
-        <div class="imagem-perfil">
-            <img class="apresentacao__imagem" src="assets/fotoperfil.png" alt="Foto Reverthon Santos">
-        </div>
-        <!-- Card adaptado com texto e imagem de perfil -->
         <aside class="card bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
-            <div class="flex justify-between items-center">
-                <div class="flex" style="margin-bottom: 20px;">
-                    <div class="w-3 h-3 rounded-full bg-red-500" style="margin-right: 10px;"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500" style="margin-right: 10px;"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
+            <div class="flex justify-start items-start" style="margin-bottom: 40px;">
+                <div class="w-3 h-3 rounded-full bg-red-500" style="margin-right: 10px;"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500" style="margin-right: 10px;"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            <div class="flex mt-4 items-center">
-                <div class="flex-1">
+            <div class="flex mt-4 flex-col items-center"> 
+                <img src="assets/perfil.jpg" alt="Imagem de Reverthon Santos, especialista em automação de processos" class="imagem-card">
+                <div class="flex-1 text-center">
                     <h1 class="apresentacao__conteudo__titulo text-green-400">
                         Potencialize seu negócio com Automação e Robotização de Processos!
                     </h1>
@@ -45,10 +49,8 @@
                         Olá! Sou Reverthon Santos, especialista em automação de processos com RPA, entusiasta de tecnologia e inovação. Com anos de experiência em Business Process Management (BPM), acredito que a automação inteligente e a melhoria contínua são fundamentais para aumentar a eficiência, reduzir custos e escalar resultados de maneira sustentável.
                     </p>
                 </div>
-
             </div>
         </aside>
-    
 
         <section class="apresentacao__links">
             <h2 class="apresentacao__links__subtitulo">Conecte-se comigo:</h2>
@@ -72,19 +74,20 @@
             </a>
         </section>
     </main>
-    
+
     <footer class="rodape">
         <p>Desenvolvido por Reverthon Santos</p>
     </footer>
-
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const links = document.querySelectorAll('.cabecalho__menu__link');
-            links.forEach(link => {
-                if (link.href === window.location.href.split('#')[0]) { // Lida com âncoras
-                    link.classList.add('active');
-                }
-            });
+        // Obtém a URL atual
+        const currentPage = window.location.pathname.split("/").pop(); // Nome do arquivo atual
+
+        // Marca o input correspondente como checked
+        document.querySelectorAll('.radio-inputs .radio input').forEach(input => {
+            if (input.value === currentPage) {
+                input.checked = true;
+            }
         });
     </script>
 </body>

@@ -11,28 +11,41 @@
 
 <body>
     <header class="cabecalho">
-        <div class="cabecalho__container">
-            <nav class="cabecalho__menu">
-                <a class="cabecalho__menu__link" href="index.html">Home</a>
-                <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-                <a class="cabecalho__menu__link" href="projetos.html">Projetos</a>
-                <a class="cabecalho__menu__link" href="contato.html">Contato</a>
-            </nav>
+        <div class="radio-inputs">
+            <label class="radio" for="home">
+                <input type="radio" id="home" name="radio" value="index.html" />
+                <a href="index.html" class="name">Home</a>
+            </label>
+            <label class="radio" for="sobre">
+                <input type="radio" id="sobre" name="radio" value="about.html" />
+                <a href="about.html" class="name">Sobre</a>
+            </label>
+            <label class="radio" for="projetos">
+                <input type="radio" id="projetos" name="radio" value="projetos.html" checked />
+                <a href="projetos.html" class="name">Projetos</a>
+            </label>
+            <label class="radio" for="contato">
+                <input type="radio" id="contato" name="radio" value="contato.html" />
+                <a href="contato.html" class="name">Contato</a>
+            </label>
         </div>
     </header>
 
     <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Contato</h1>
 
-            <h2 class="apresentacao__conteudo__titulo__sub">Celular & WhatsApp</h2>
-            <p class="apresentacao__conteudo__texto">+55 (83) 99886-1555</p>
+        <aside class="card bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <section class="apresentacao__conteudo">
+                <h1 class="apresentacao__conteudo__titulo">Contato</h1>
 
-            <h2 class="apresentacao__conteudo__titulo__sub">E-mail</h2>
-            <p class="apresentacao__conteudo__texto">reverthonds@gmail.com</p>
-            
-    
-        </section>
+                <h2 class="apresentacao__conteudo__titulo__sub">Celular & WhatsApp</h2>
+                <p class="apresentacao__conteudo__texto">+55 (83) 99886-1555</p>
+
+                <h2 class="apresentacao__conteudo__titulo__sub">E-mail</h2>
+                <p class="apresentacao__conteudo__texto">reverthonds@gmail.com</p>
+                
+        
+            </section>
+        </aside>
     </main>
 
     <footer class="rodape">
@@ -40,15 +53,14 @@
     </footer>
 
     <script>
-        // JavaScript para adicionar a classe 'active' ao link correspondente
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('.cabecalho__menu__link');
-            links.forEach(link => {
-                // Compara o href do link com a URL atual da página
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
-            });
+        // Obtém a URL atual
+        const currentPage = window.location.pathname.split("/").pop(); // Nome do arquivo atual
+
+        // Marca o input correspondente como checked
+        document.querySelectorAll('.radio-inputs .radio input').forEach(input => {
+            if (input.value === currentPage) {
+                input.checked = true;
+            }
         });
     </script>
 </body>

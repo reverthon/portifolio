@@ -11,105 +11,122 @@
 
 <body>
     <header class="cabecalho">
-        <div class="cabecalho__container">
-            <nav class="cabecalho__menu">
-                <a class="cabecalho__menu__link" href="index.html" title="Ir para a página inicial">Home</a>
-                <a class="cabecalho__menu__link" href="about.html" title="Sobre mim">Sobre mim</a>
-                <a class="cabecalho__menu__link" href="projetos.html" title="Meus projetos">Projetos</a>
-                <a class="cabecalho__menu__link" href="contato.html" title="Entre em contato">Contato</a>
-            </nav>
+        <div class="radio-inputs">
+            <label class="radio" for="home">
+                <input type="radio" id="home" name="radio" value="index.html" />
+                <a href="index.html" class="name">Home</a>
+            </label>
+            <label class="radio" for="sobre">
+                <input type="radio" id="sobre" name="radio" value="about.html" />
+                <a href="about.html" class="name">Sobre</a>
+            </label>
+            <label class="radio" for="projetos">
+                <input type="radio" id="projetos" name="radio" value="projetos.html" checked />
+                <a href="projetos.html" class="name">Projetos</a>
+            </label>
+            <label class="radio" for="contato">
+                <input type="radio" id="contato" name="radio" value="contato.html" />
+                <a href="contato.html" class="name">Contato</a>
+            </label>
         </div>
     </header>
 
     <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
-            <p class="apresentacao__conteudo__texto">Possuo nove anos de experiência no mercado financeiro, atuando em uma das principais instituições financeiras do país. Iniciei minha jornada profissional na área de processos focando na melhoria contínua e na gestão de processos.</p>
-            <p class="apresentacao__conteudo__texto">Nos últimos dois anos, tenho me especializado na área de automação robótica de processos com o objetivo de impulsionar o crescimento empresarial através de tecnologia, processos e inovação. Conduzi diversos projetos de robotização e automação na cooperativa, utilizando ferramentas como Power Automate, UiPath, Python, SeSuite e Power Apps.</p>
-            
-            <h2 class="apresentacao__conteudo__titulo">Experiência Profissional</h2>
-            
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Abr. de 2024 - Atual</h3>
-            <p class="apresentacao__conteudo__texto">Analista de Processos e Qualidade</p>
-            <ul class="apresentacao__conteudo__lista">
-                <li>Conduzir projetos locais e sistêmicos;</li>
-                <li>Mapeamento e Modelagem de Processos de Negócios;</li>
-                <li>Automação e robotização de processos (Power Automate, UiPath, SeSuite);</li>
-                <li>Criação de soluções com o PowerApps;</li>
-                <li>Gerenciamento dos processos de negócios;</li>
-                <li>Criação de KPIs para gestão;</li>
-                <li>Realização de treinamentos;</li>
-                <li>Levantamento de requisitos para RPA.</li>
-            </ul>
+        <aside class="card bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <section class="apresentacao__conteudo">
+                <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
+                <p class="apresentacao__conteudo__texto">Possuo nove anos de experiência no mercado financeiro, atuando em uma das principais instituições financeiras do país. Iniciei minha jornada profissional na área de processos focando na melhoria contínua e na gestão de processos.</p>
+                <p class="apresentacao__conteudo__texto">Nos últimos dois anos, tenho me especializado na área de automação robótica de processos com o objetivo de impulsionar o crescimento empresarial através de tecnologia, processos e inovação. Conduzi diversos projetos de robotização e automação na cooperativa, utilizando ferramentas como Power Automate, UiPath, Python, SeSuite e Power Apps.</p>
+                
+                <h2 class="apresentacao__conteudo__titulo">Experiência Profissional</h2>
+                
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Abr. de 2024 - Atual</h3>
+                <p class="apresentacao__conteudo__texto">Analista de Processos e Qualidade</p>
+                <ul class="apresentacao__conteudo__lista" style="padding-left: 20px;">
+                    <li>Conduzir projetos locais e sistêmicos;</li>
+                    <li>Mapeamento e Modelagem de Processos de Negócios;</li>
+                    <li>Automação e robotização de processos (Power Automate, UiPath, SeSuite);</li>
+                    <li>Criação de soluções com o PowerApps;</li>
+                    <li>Gerenciamento dos processos de negócios;</li>
+                    <li>Criação de KPIs para gestão;</li>
+                    <li>Realização de treinamentos;</li>
+                    <li>Levantamento de requisitos para RPA.</li>
+                </ul>
+                <br/>
 
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Abr. de 2021 - Mar. 2024</h3>
-            <p class="apresentacao__conteudo__texto">Assistente de Processos e Qualidade</p>
-            <ul class="apresentacao__conteudo__lista">
-                <li>Conduzir projetos locais;</li>
-                <li>Mapeamento e Modelagem de Processos de Negócios;</li>
-                <li>Automação de processos;</li>
-                <li>Criação de soluções com o PowerApps;</li>
-                <li>Acompanhamento de indicadores de processos;</li>
-                <li>Criação de KPIs para gestão;</li>
-                <li>Realização de treinamentos;</li>
-                <li>Acompanhamento do painel de robotização;</li>
-                <li>Rotinas administrativas do setor.</li>
-            </ul>
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Abr. de 2021 - Mar. 2024</h3>
+                <p class="apresentacao__conteudo__texto">Assistente de Processos e Qualidade</p>
+                <ul class="apresentacao__conteudo__lista" style="padding-left: 20px;">
+                    <li>Conduzir projetos locais;</li>
+                    <li>Mapeamento e Modelagem de Processos de Negócios;</li>
+                    <li>Automação de processos;</li>
+                    <li>Criação de soluções com o PowerApps;</li>
+                    <li>Acompanhamento de indicadores de processos;</li>
+                    <li>Criação de KPIs para gestão;</li>
+                    <li>Realização de treinamentos;</li>
+                    <li>Acompanhamento do painel de robotização;</li>
+                    <li>Rotinas administrativas do setor.</li>
+                </ul>
+                <br/>
 
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Jan. de 2018 - Mar. 2021</h3>
-            <p class="apresentacao__conteudo__texto">Assistente de Controles Internos</p>
-            <ul class="apresentacao__conteudo__lista">
-                <li>Formalização e liberação de Operações de Crédito;</li>
-                <li>Análise de crédito;</li>
-                <li>Automação de processos;</li>
-                <li>Auditoria interna;</li>
-                <li>Realização de treinamentos;</li>
-                <li>Análise e liberação de cartão de crédito;</li>
-                <li>Auditoria de tesouraria;</li>
-                <li>Rotinas administrativas do setor.</li>
-            </ul>
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Jan. de 2018 - Mar. 2021</h3>
+                <p class="apresentacao__conteudo__texto">Assistente de Controles Internos</p>
+                <ul class="apresentacao__conteudo__lista" style="padding-left: 20px;">
+                    <li>Formalização e liberação de Operações de Crédito;</li>
+                    <li>Análise de crédito;</li>
+                    <li>Automação de processos;</li>
+                    <li>Auditoria interna;</li>
+                    <li>Realização de treinamentos;</li>
+                    <li>Análise e liberação de cartão de crédito;</li>
+                    <li>Auditoria de tesouraria;</li>
+                    <li>Rotinas administrativas do setor.</li>
+                </ul>
+                <br/>
 
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Fev. de 2017 - Dez. 2017</h3>
-            <p class="apresentacao__conteudo__texto">Estagiário de Controladoria</p>
-            
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Ago. de 2016 - Jan. 2017</h3>
-            <p class="apresentacao__conteudo__texto">Estagiário Administrativo</p>
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Fev. de 2017 - Dez. 2017</h3>
+                <p class="apresentacao__conteudo__texto">Estagiário de Controladoria</p>
+                
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Ago. de 2016 - Jan. 2017</h3>
+                <p class="apresentacao__conteudo__texto">Estagiário Administrativo</p>
+    
+                <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Mai. de 2015 - Jul. 2016</h3>
+                <p class="apresentacao__conteudo__texto">Aprendiz Administrativo</p>
+    
+                <h2 class="apresentacao__conteudo__titulo">Formação</h2>
+    
+                <h3 class="apresentacao__conteudo__titulo__sub">Estácio</h3>
+                <p class="apresentacao__conteudo__texto">Tecnólogo - Análise e Desenvolvimento de Sistemas | Abr. de 2024 - Out. de 2026</p>
+    
+                <h3 class="apresentacao__conteudo__titulo__sub">UNIESP Centro Universitário</h3>
+                <p class="apresentacao__conteudo__texto">Pós-Graduação - Gestão de Processos e Inovação | Nov. de 2023 - Mai. de 2024</p>
+    
+                <h3 class="apresentacao__conteudo__titulo__sub">UFPB - Universidade Federal da Paraíba</h3>
+                <p class="apresentacao__conteudo__texto">Bacharelado - Administração | Ago. de 2018 - Out. de 2023</p>
+                
+                <h2 class="apresentacao__conteudo__titulo">Certificações e Qualificações</h2>
+                <ul class="apresentacao__conteudo__lista" style="padding-left: 20px;">
+                    <li>Desenv. Web em Html5, Css, Javascript e Php - Estácio;</li>
+                    <li>Power Automate Desktop - Intermediário;</li>
+                    <li>Power Automate Web - Intermediário;</li>
+                    <li>Power Apps - Intermediário;</li>
+                    <li>COE RPA - Governança em RPA - iProcess;</li>
+                    <li>Instruções SQL - Alura;</li>
+                    <li>Python: Avançando na Linguagem - Alura;</li>
+                    <li>Full Agile - Ecossistema Inova;</li>
+                    <li>CPA 20 e CPA 10 - ANBIMA;</li>
+                    <li>Gerenciamento por Processos - FGV;</li>
+                    <li>Gestão da Qualidade - FGV;</li>
+                    <li>Análise e Melhoria Contínua - FGV;</li>
+                    <li>Modelagem de Processos de Negócios - FGV;</li>
+                    <li>Excel Avançado - Kronos;</li>
+                    <li>Gestão de Pessoas - SESCOOP/PB;</li>
+                    <li>Domínio Pacote Office.</li>
+                </ul>
 
-            <h3 class="apresentacao__conteudo__titulo__sub">Sicredi Evolução | Mai. de 2015 - Jul. 2016</h3>
-            <p class="apresentacao__conteudo__texto">Aprendiz Administrativo</p>
+    
+            </section>
 
-            <h2 class="apresentacao__conteudo__titulo">Formação</h2>
-
-            <h3 class="apresentacao__conteudo__titulo__sub">Estácio</h3>
-            <p class="apresentacao__conteudo__texto">Tecnólogo - Análise e Desenvolvimento de Sistemas | Abr. de 2024 - Out. de 2026</p>
-
-            <h3 class="apresentacao__conteudo__titulo__sub">UNIESP Centro Universitário</h3>
-            <p class="apresentacao__conteudo__texto">Pós-Graduação - Gestão de Processos e Inovação | Nov. de 2023 - Mai. de 2024</p>
-
-            <h3 class="apresentacao__conteudo__titulo__sub">UFPB - Universidade Federal da Paraíba</h3>
-            <p class="apresentacao__conteudo__texto">Bacharelado - Administração | Ago. de 2018 - Out. de 2023</p>
-            
-            <h2 class="apresentacao__conteudo__titulo">Certificações e Qualificações</h2>
-            <ul class="apresentacao__conteudo__lista">
-                <li>Desenv. Web em Html5, Css, Javascript e Php - Estácio;</li>
-                <li>Power Automate Desktop - Intermediário;</li>
-                <li>Power Automate Web - Intermediário;</li>
-                <li>Power Apps - Intermediário;</li>
-                <li>COE RPA - Governança em RPA - iProcess;</li>
-                <li>Instruções SQL - Alura;</li>
-                <li>Python: Avançando na Linguagem - Alura;</li>
-                <li>Full Agile - Ecossistema Inova;</li>
-                <li>CPA 20 e CPA 10 - ANBIMA;</li>
-                <li>Gerenciamento por Processos - FGV;</li>
-                <li>Gestão da Qualidade - FGV;</li>
-                <li>Análise e Melhoria Contínua - FGV;</li>
-                <li>Modelagem de Processos de Negócios - FGV;</li>
-                <li>Excel Avançado - Kronos;</li>
-                <li>Gestão de Pessoas - SESCOOP/PB;</li>
-                <li>Domínio Pacote Office.</li>
-            </ul>
-
-        </section>
+        </aside>
     </main>
 
     <footer class="rodape">
@@ -117,15 +134,14 @@
     </footer>
 
     <script>
-        // JavaScript para adicionar a classe 'active' ao link correspondente
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('.cabecalho__menu__link');
-            links.forEach(link => {
-                // Compara o href do link com a URL atual da página
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
-            });
+        // Obtém a URL atual
+        const currentPage = window.location.pathname.split("/").pop(); // Nome do arquivo atual
+
+        // Marca o input correspondente como checked
+        document.querySelectorAll('.radio-inputs .radio input').forEach(input => {
+            if (input.value === currentPage) {
+                input.checked = true;
+            }
         });
     </script>
 </body>

@@ -10,97 +10,98 @@
 </head>
 
 <body>
-    <header class="cabecalho" aria-label="Menu principal">
-        <div class="cabecalho__container">
-            <nav class="cabecalho__menu">
-                <a class="cabecalho__menu__link" href="index.html" title="Ir para a página inicial">Home</a>
-                <a class="cabecalho__menu__link" href="about.html" title="Saber mais sobre mim">Sobre mim</a>
-                <a class="cabecalho__menu__link" href="projetos.html" title="Ver os projetos">Projetos</a>
-                <a class="cabecalho__menu__link" href="contato.html" title="Entrar em contato">Contato</a>
-            </nav>
+    <header class="cabecalho">
+        <div class="radio-inputs">
+            <label class="radio" for="home">
+                <input type="radio" id="home" name="radio" value="index.html" />
+                <a href="index.html" class="name">Home</a>
+            </label>
+            <label class="radio" for="sobre">
+                <input type="radio" id="sobre" name="radio" value="about.html" />
+                <a href="about.html" class="name">Sobre</a>
+            </label>
+            <label class="radio" for="projetos">
+                <input type="radio" id="projetos" name="radio" value="projetos.html" checked />
+                <a href="projetos.html" class="name">Projetos</a>
+            </label>
+            <label class="radio" for="contato">
+                <input type="radio" id="contato" name="radio" value="contato.html" />
+                <a href="contato.html" class="name">Contato</a>
+            </label>
         </div>
     </header>
 
     <main class="apresentacao">
-        <!-- Conteúdo dos Projetos à Esquerda -->
-        <section id="relatorio-pix" class="tab-content active">
-            <h2 style="margin-bottom: 20px;">Relatório PIX</h2>
+        <aside class="card bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+            <section id="relatorio-pix" class="tab-content active">
 
-            <p style="text-align: justify; margin-bottom: 15px;">
-                Esse projeto foi desenvolvido para atender à necessidade da empresa de realizar uma análise mais detalhada das movimentações financeiras via PIX, tanto em relação a pagamentos quanto recebimentos. Como o sistema original não disponibilizava uma base específica para esse tipo de análise, foi criado um script em Python capaz de processar o extrato de conta corrente gerado no formato PRN, sem configurações padronizadas e disponibilizar as informações em PDF.
-            </p>
+               <h2 class="apresentacao__conteudo__titulo" style="margin-bottom: 20px;">Relatório PIX</h2>
 
-            <p style="text-align: justify; margin-bottom: 15px;">
-                O script realiza uma série de tratamentos no relatório para extrair informações cruciais para a análise financeira e de crédito, como:
-            </p>
+    
+                <p style="text-align: justify; margin-bottom: 15px;">
+                    Esse projeto foi desenvolvido para atender à necessidade da empresa de realizar uma análise mais detalhada das movimentações financeiras via PIX, tanto em relação a pagamentos quanto recebimentos. Como o sistema original não disponibilizava uma base específica para esse tipo de análise, foi criado um script em Python capaz de processar o extrato de conta corrente gerado no formato PRN, sem configurações padronizadas e disponibilizar as informações em PDF.
+                </p>
+    
+                <p style="text-align: justify; margin-bottom: 15px;">
+                    O script realiza uma série de tratamentos no relatório para extrair informações cruciais para a análise financeira e de crédito, como:
+                </p>
+    
+                <ul class="apresentacao__conteudo__lista">
+                    <li><strong>Total de Recebimento PIX</strong>: Calcula o valor total dos recebimentos via PIX em um determinado período, permitindo uma visão geral do fluxo de entrada.</li>
+                    <li><strong>Ticket Médio dos Recebimentos</strong>: Com base na quantidade de transações e o valor total recebido, o script calcula o ticket médio, ou seja, o valor médio de cada transação PIX recebida, proporcionando uma métrica útil para avaliar o perfil das transações.</li>
+                    <li><strong>Concentração de Recebimentos</strong>: O script identifica o percentual de concentração dos recebimentos, ou seja, determina se uma parcela significativa dos recebimentos veio de um único usuário ou de poucos usuários, facilitando a identificação de dependência de clientes específicos.</li>
+                    <li><strong>Total de PIX Realizado</strong>: Além dos recebimentos, o script calcula o valor total de transações PIX realizadas pela empresa, permitindo uma análise completa do fluxo financeiro.</li>
+                    <li><strong>Quantidade de Recebimentos PIX</strong>: Conta o número de transações de recebimento via PIX em um período, oferecendo uma visão detalhada do volume de transações.</li>
+                    <li><strong>Análise Analítica em Excel</strong>: Após o processamento dos dados, o script exporta os resultados para uma planilha Excel, onde as informações são apresentadas de forma organizada e detalhada, facilitando a consulta e análises adicionais.</li>
+                </ul>
+    
+                <p style="text-align: justify;">
+                    Essa ferramenta se mostrou essencial para a análise da capacidade financeira dos clientes, uma vez que fornece métricas detalhadas sobre os recebimentos e pagamentos via PIX, ajudando os gestores a tomar decisões mais informadas no que se refere à análise de crédito.
+                </p>
+    
+                <!-- Imagem do relatório -->
+                <img src="assets/modeloextratopix.png" alt="Exemplo de relatório financeiro de movimentações PIX" style="display: block; margin: 40px auto; max-width: 100%; height: auto; border-radius: 10px; border: 2px solid rgb(187, 186, 186);">
+                <p style="text-align: center;">
+                    <strong>*Imagem para exemplificar com dados fictícios.</strong>
+                </p>
+            </section>
+    
+            <section id="aplicativo-power-apps" class="tab-content">
+                <br/>
+                <br/>
+                <h2 class="apresentacao__conteudo__titulo" style="margin-bottom: 20px;">Aplicativo Power Apps</h2>
+    
+                <p style="text-align: justify; margin-bottom: 15px;">
+                    Este projeto foi desenvolvido totalmente na plataforma Power Apps da Microsoft, com o objetivo de auxiliar os gestores nas visitas para prospecção de novos clientes.
+                </p>
+    
+                <p style="text-align: justify; margin-bottom: 15px;">
+                    No aplicativo, o usuário irá dispor das principais informações sobre os produtos e serviços da empresa, de forma online na "palma da mão".
+                </p>
+    
+                <!-- Imagem do Aplicativo -->
+                <img src="assets/MODELOAPP.png" alt="Interface do aplicativo Power Apps" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+                <p style="text-align: center;">
+                    <strong>*Imagem para exemplificar sem dados sensíveis.</strong>
+                </p>
+            </section>
+        </aside>
 
-            <ul class="apresentacao__conteudo__lista">
-                <li><strong>Total de Recebimento PIX</strong>: Calcula o valor total dos recebimentos via PIX em um determinado período, permitindo uma visão geral do fluxo de entrada.</li>
-                <li><strong>Ticket Médio dos Recebimentos</strong>: Com base na quantidade de transações e o valor total recebido, o script calcula o ticket médio, ou seja, o valor médio de cada transação PIX recebida, proporcionando uma métrica útil para avaliar o perfil das transações.</li>
-                <li><strong>Concentração de Recebimentos</strong>: O script identifica o percentual de concentração dos recebimentos, ou seja, determina se uma parcela significativa dos recebimentos veio de um único usuário ou de poucos usuários, facilitando a identificação de dependência de clientes específicos.</li>
-                <li><strong>Total de PIX Realizado</strong>: Além dos recebimentos, o script calcula o valor total de transações PIX realizadas pela empresa, permitindo uma análise completa do fluxo financeiro.</li>
-                <li><strong>Quantidade de Recebimentos PIX</strong>: Conta o número de transações de recebimento via PIX em um período, oferecendo uma visão detalhada do volume de transações.</li>
-                <li><strong>Análise Analítica em Excel</strong>: Após o processamento dos dados, o script exporta os resultados para uma planilha Excel, onde as informações são apresentadas de forma organizada e detalhada, facilitando a consulta e análises adicionais.</li>
-            </ul>
-
-            <p style="text-align: justify;">
-                Essa ferramenta se mostrou essencial para a análise da capacidade financeira dos clientes, uma vez que fornece métricas detalhadas sobre os recebimentos e pagamentos via PIX, ajudando os gestores a tomar decisões mais informadas no que se refere à análise de crédito.
-            </p>
-
-            <!-- Imagem do relatório -->
-            <img src="assets/modeloextratopix.png" alt="Exemplo de relatório financeiro de movimentações PIX" style="display: block; margin: 40px auto; max-width: 100%; height: auto; border-radius: 10px; border: 2px solid rgb(187, 186, 186);">
-            <p style="text-align: center;">
-                <strong>*Imagem para exemplificar com dados fictícios.</strong>
-            </p>
-        </section>
-
-        <section id="aplicativo-power-apps" class="tab-content">
-            <h2 style="margin-bottom: 20px;">Aplicativo Power Apps</h2>
-
-            <p style="text-align: justify; margin-bottom: 15px;">
-                Este projeto foi desenvolvido totalmente na plataforma Power Apps da Microsoft, com o objetivo de auxiliar os gestores nas visitas para prospecção de novos clientes.
-            </p>
-
-            <p style="text-align: justify; margin-bottom: 15px;">
-                No aplicativo, o usuário irá dispor das principais informações sobre os produtos e serviços da empresa, de forma online na "palma da mão".
-            </p>
-
-            <!-- Imagem do Aplicativo -->
-            <img src="assets/MODELOAPP.png" alt="Interface do aplicativo Power Apps" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
-            <p style="text-align: center;">
-                <strong>*Imagem para exemplificar sem dados sensíveis.</strong>
-            </p>
-        </section>
 
     </main>
 
     <footer class="rodape">
         <p>Desenvolvido por Reverthon Santos</p>
     </footer>
-
     <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
+        // Obtém a URL atual
+        const currentPage = window.location.pathname.split("/").pop(); // Nome do arquivo atual
 
-        // JavaScript para adicionar a classe 'active' ao link correspondente
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('.cabecalho__menu__link');
-            links.forEach(link => {
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
-            });
+        // Marca o input correspondente como checked
+        document.querySelectorAll('.radio-inputs .radio input').forEach(input => {
+            if (input.value === currentPage) {
+                input.checked = true;
+            }
         });
     </script>
 </body>
